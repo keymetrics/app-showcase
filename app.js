@@ -78,11 +78,11 @@ setInterval(function() {
 }, getRandomArbitrary(30, 120) * 1000);
 
 
-setInterval(function() {
-  request.get('http://localhost:9999/api/v1/Customer/count', (err, req, body) => {
-    if (!err)
-      user_probe.set(body.count);
-  });
-}, 1000);
+// setInterval(function() {
+//   request.get('http://localhost:9999/api/v1/Customer/count', (err, req, body) => {
+//     if (!err)
+//       user_probe.set(body.count);
+//   });
+// }, 1000);
 
 require('./requester.js')();
