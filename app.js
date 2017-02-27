@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 
 app.use(function(req, res, next) {
   if (MAINTENANCE_MODE == true)
-    return res.send('Maintenance');
+    return res.send({data: 'Maintenance'});
   next();
 });
 
@@ -39,12 +39,13 @@ app.listen(9999, function () {
 
 
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 Probe.metric({
   name : 'Realtime Users',
   value : function() {
+    console.log(getRandomArbitrary(5, 8));
     return getRandomArbitrary(5, 8);
   }
 });
