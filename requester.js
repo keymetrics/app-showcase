@@ -19,6 +19,7 @@ module.exports = function() {
   setInterval(function() {
     var cust = customers[Math.floor(Math.random()*customers.length)];
 
+    if (!cust) return;
     request.get('http://localhost:9999/api/v1/Customer/' + cust._id, (err, req, body) => {
       console.log(body);
     });
@@ -43,7 +44,7 @@ module.exports = function() {
     }, (err, res, body) => {
       //console.log(err, res);
     });
-  }, 1000);
+  }, 8000);
 };
 
 
