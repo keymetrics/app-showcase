@@ -10,7 +10,8 @@
     "express-restify-mongoose" : "*",
     "body-parser" : "*",
     "request" : "*",
-    "random-name" : "*"
+    "random-name" : "*",
+    "v8-profiler" : "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -75,7 +75,7 @@ setInterval(function() {
     email : name + '@gmail.com'
   });
   console.log('New user %s registered', name);
-}, getRandomArbitrary(30, 120) * 1000);
+}, getRandomArbitrary(30, 320) * 1000);
 
 
 // setInterval(function() {
