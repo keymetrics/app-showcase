@@ -17,6 +17,7 @@ module.exports = function() {
   }, 1000);
 
   setInterval(function() {
+    if (!customers) return false;
     var cust = customers[Math.floor(Math.random()*customers.length)];
 
     if (!cust) return;
