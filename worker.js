@@ -63,7 +63,7 @@ setInterval(function() {
 
 setInterval(function() {
   queue--;
-}, 5000);
+}, 10000);
 
 setInterval(function() {
   queue = 0;
