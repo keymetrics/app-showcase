@@ -70,6 +70,14 @@ pmx.action('maintenance', {comment : 'Increment downloads'}, function(reply) {
 });
 
 setInterval(function() {
+  global.Customer.count({}, (err, dt) => {
+    if (err) return console.error(err);
+    user_probe.set(dt);
+  });
+
+}, 5000);
+
+setInterval(function() {
   var name = random.first();
 
   pmx.emit('user:register', {
@@ -77,7 +85,7 @@ setInterval(function() {
     email : name + '@gmail.com'
   });
   console.log('New user %s registered', name);
-}, getRandomArbitrary(30, 320) * 1000);
+}, getRandomArbitrary(30, 32000) * 1000);
 
 
 require('./requester.js')();
