@@ -4,6 +4,9 @@ module.exports = {
     script : "./app.js",
     exec_mode : 'cluster',
     instances : '2'
+  }, {
+    name   : "Worker",
+    script : "./worker.js"
   }],
 
   deploy : {
