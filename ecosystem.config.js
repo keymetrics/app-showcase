@@ -1,7 +1,9 @@
 module.exports = {
   apps : [{
     name   : "API",
-    script : "./app.js"
+    script : "./app.js",
+    exec_mode : 'cluster',
+    instances : '2'
   }],
 
   deploy : {

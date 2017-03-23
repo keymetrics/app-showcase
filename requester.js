@@ -5,7 +5,9 @@ module.exports = function() {
   var customers;
 
   setInterval(() => {
-    global.Customer.find().remove();
+    global.Customer.remove({}, () => {
+      console.log('ALl customers removed');
+    });
   }, 1000 * 60 * 60);
 
   setInterval(function() {
