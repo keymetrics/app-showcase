@@ -22,10 +22,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-restify.serve(router, mongoose.model('Customer', new mongoose.Schema({
+global.Customer = mongoose.model('Customer', new mongoose.Schema({
   name: { type: String, required: true },
   comment: { type: String }
-})))
+}));
+
+restify.serve(router, global.Customer)
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
@@ -77,12 +79,5 @@ setInterval(function() {
   console.log('New user %s registered', name);
 }, getRandomArbitrary(30, 320) * 1000);
 
-
-// setInterval(function() {
-//   request.get('http://localhost:9999/api/v1/Customer/count', (err, req, body) => {
-//     if (!err)
-//       user_probe.set(body.count);
-//   });
-// }, 1000);
 
 require('./requester.js')();
