@@ -4,7 +4,6 @@ var request = require('request');
 module.exports = function() {
   var customers;
 
-  global.Customer.find().remove();
   setInterval(() => {
     global.Customer.find().remove();
   }, 1000 * 60 * 60);
